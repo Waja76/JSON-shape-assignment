@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Shapes</title>
+
+    <script>
+        window.onload = function() {
+
+            var c = document.getElementById("json");
+            var ctx = c.getContext("2d");
+
+            //JSON coordinate array
+            var json = [{
+                    "x": "0", //firsy x and y coordinate
+                    "y": "20"
+                },
+                {
+                    "x": "300",//second x and y coordinate
+                    "y": "20"
+                },
+                {
+                    "x": "150",//third x and y coordinate
+                    "y": "300"
+                }
+            ];
+
+            ctx.beginPath();
+
+            // for loop calling in triangle coordinates from variable 'json' array
+            
+            for (var i in json) {
+                ctx.lineTo(json[i].x, json[i].y);
+            }
+
+            ctx.closePath();
+            ctx.fillStyle = "#ffca05";
+            ctx.strokeStyle = "#767574";
+            ctx.fill();
+            ctx.stroke();
+            
+        
+        
+        function square() {
+            
+            var jsonShape = JSON.parse('{"stroke":"#4a4949", "colour":"#0d71a7"}');
+            ctx.fillStyle = jsonShape.colour;//colour fill called from jsonShape variable and 'colour' keyname
+            ctx.fillRect(50,400,200,200);
+            ctx.strokeRect(50,400,200,200);
+            ctx.strokeStyle =jsonShape.stroke;//stroke colour called from jsonShape variable and 'stroke' keyname
+        
+        }
+
+        square();
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <canvas id="json" width="300" height="800"></canvas>
+</body>
+
+</html>
