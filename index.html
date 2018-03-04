@@ -18,11 +18,11 @@
                     "y": "20"
                 },
                 {
-                    "x": "300",//second x and y coordinate
+                    "x": "300", //second x and y coordinate
                     "y": "20"
                 },
                 {
-                    "x": "150",//third x and y coordinate
+                    "x": "150", //third x and y coordinate
                     "y": "300"
                 }
             ];
@@ -30,8 +30,8 @@
             ctx.beginPath();
 
             // for loop calling in triangle coordinates from variable 'json' array
-                for (var i in json) {
-                ctx.lineTo(json[i].x, json[i].y);//line to command access for x and y in loop
+            for (var i in json) {
+                ctx.lineTo(json[i].x, json[i].y); //line to command access for x and y in loop
             }
 
             ctx.closePath();
@@ -39,26 +39,26 @@
             ctx.strokeStyle = "#767574";
             ctx.fill();
             ctx.stroke();
-            
-        
-        
-        function square1() {
+
+
+
+            function square1() {
 
                 var jsonShape =
 
-                JSON.parse('{"stroke":"#4a4949","col":{"col1":"#6dbae3","col2":"#e30000"}}');
+                    JSON.parse('{"stroke":"#4a4949","col":{"col1":"#6dbae3","col2":"#e30000"}}');
                 ctx.fillStyle = jsonShape.col.col1; /* these colour values are called from nested JSON objects (col1 - which is blue) and col2 (which is red). This square is blue*/
                 ctx.fillRect(50, 350, 200, 200);
                 ctx.strokeRect(50, 350, 200, 200);
                 ctx.strokeStyle = jsonShape.stroke; //stroke colour called from jsonShape variable and 'stroke' keyname
 
             }
-            
+
             function square2() { //repeat of function square1 demonstrating second colour value in nested JSOn objects - this on is red
 
                 var jsonShape =
 
-                JSON.parse('{"stroke":"#4a4949","col":{"col1":"#6dbae3","col2":"#e30000"}}');
+                    JSON.parse('{"stroke":"#4a4949","col":{"col1":"#6dbae3","col2":"#e30000"}}');
                 ctx.fillStyle = jsonShape.col.col2; /* these colour values are called from nested JSON objects (col1 - which is blue) and col2 (which is red) */
                 ctx.fillRect(50, 600, 200, 200);
                 ctx.strokeRect(50, 600, 200, 200);
