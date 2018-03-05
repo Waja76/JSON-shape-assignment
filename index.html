@@ -33,7 +33,7 @@
             for (var i in json) {
                 ctx.lineTo(json[i].x, json[i].y); //line to command access for x and y in loop
             }
-
+            //close path to end shape and style values
             ctx.closePath();
             ctx.fillStyle = "#ffca05";
             ctx.strokeStyle = "#767574";
@@ -54,7 +54,7 @@
 
             }
 
-            function square2() { //repeat of function square1 demonstrating second colour value in nested JSOn objects - this on is red
+            function square2() { //repeat of function square1 demonstrating access to second colour value in nested JSOn objects - this one is red
 
                 var jsonShape =
 
